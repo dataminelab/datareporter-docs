@@ -84,6 +84,10 @@ Examples:
 [Supported Data Sources](/docs/data-sources/setup/supported-data-sources)
 ```
 
+## Previewing Your Changes
+
+For **content edits** (typos, wording, new sections), your editor's built-in markdown preview is sufficient — VS Code, GitHub's web editor, or any markdown viewer will show you the content accurately.
+
 ## Deployment
 
 This repo uses a hands-off deployment model:
