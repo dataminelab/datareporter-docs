@@ -15,9 +15,11 @@ description: "Overview of Turnilo, DataReporter's embedded interactive data expl
 
 ## Turnilo - Interactive Data Exploration
 
-Turnilo is an open-source data exploration and visualization tool originally built for Apache Druid. DataReporter embeds a customized version of Turnilo (hardforked from [allegro/turnilo](https://github.com/allegro/turnilo) v1.40.5) to provide interactive, drag-and-drop data exploration directly within your dashboards.
+Turnilo is an open-source data exploration tool that lets you slice, filter, and visualize data through a drag-and-drop interface — no SQL required. It turns raw datasets into interactive explorations in seconds.
 
-Unlike standard DataReporter visualizations which are query-result-driven, Turnilo offers a fully interactive exploration experience — users can slice, filter, and pivot data in real time without writing queries.
+![Turnilo showcase](/docs/images/gifs/turnilo-showcase.gif)
+
+DataReporter embeds Turnilo to provide interactive exploration directly within your dashboards. Unlike standard visualizations which are query-result-driven, Turnilo lets users pivot, drill down, and explore data in real time without writing queries.
 
 ### Key Features
 
