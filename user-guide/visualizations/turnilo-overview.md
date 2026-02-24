@@ -80,8 +80,4 @@ To use Turnilo in DataReporter:
 4. Select your data cube, dimensions, and measures
 5. Explore your data interactively
 
-For technical architecture details, see [Turnilo Architecture](/docs/user-guide/visualizations/turnilo-architecture).
-
 For datacube configuration (dimensions, measures, and Plywood expressions), see [Datacube Configuration](/docs/user-guide/visualizations/turnilo-datacube-configuration).
-
-For the Plywood API reference, see [Turnilo API Reference](/docs/user-guide/visualizations/turnilo-api-reference).

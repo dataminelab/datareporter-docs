@@ -456,6 +456,5 @@ dataCubes:
 ### Further Reading
 
 - [Turnilo Overview](/docs/user-guide/visualizations/turnilo-overview) - Introduction to interactive data exploration
-- [Turnilo Architecture](/docs/user-guide/visualizations/turnilo-architecture) - Technical architecture and integration details
-- [Turnilo API Reference](/docs/user-guide/visualizations/turnilo-api-reference) - Plywood backend REST API
+- [Datacube Configuration (Admin Guide)](/docs/open-source/admin-guide/datacube-configuration) - Admin-focused setup, validation, and troubleshooting
 - [Official Turnilo Datacube Configuration](https://allegro.github.io/turnilo/configuration-datacubes.html) - Full upstream reference with additional advanced options
