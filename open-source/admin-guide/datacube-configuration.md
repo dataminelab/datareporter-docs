@@ -155,6 +155,6 @@ If validation fails, the API returns a 400 error with a descriptive message.
 
 ### Further Reading
 
-- [Datacube Configuration Reference](/docs/user-guide/visualizations/turnilo-datacube-configuration) -- Full property reference with expression syntax and advanced examples
-- [Turnilo Overview](/docs/user-guide/visualizations/turnilo-overview) -- Introduction to interactive data exploration
-- [Environment Variables](/docs/open-source/admin-guide/env-vars-settings) -- Plywood-related env vars (`TURNILO_BACKEND`, `PLYWOOD_SERVER_URL`)
+- [Datacube Configuration Reference](/docs/user-guide/visualizations/turnilo-datacube-configuration/) -- Full property reference with expression syntax and advanced examples
+- [Turnilo Overview](/docs/user-guide/visualizations/turnilo-overview/) -- Introduction to interactive data exploration
+- [Environment Variables](/docs/open-source/admin-guide/env-vars-settings/) -- Plywood-related env vars (`TURNILO_BACKEND`, `PLYWOOD_SERVER_URL`)
