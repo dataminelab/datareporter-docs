@@ -27,4 +27,4 @@ Some users embed their dashboards outside of DataReporter using iframes. DataRep
 
 ![](/docs/images/gitbook/full_screen_button.png)
 
-> **Danger:** Beginning with Redash V8, an embedded dashboard may use parameters. But _any user_ can modify them, which makes DataReporter the wrong tool for embedded analytics. Only share dashboards with trusted stakeholders.
+> **Danger:** Beginning with DataReporter V8, an embedded dashboard may use parameters. But _any user_ can modify them, which makes DataReporter the wrong tool for embedded analytics. Only share dashboards with trusted stakeholders.

@@ -35,7 +35,7 @@ Click the gear icon beside each parameter widget to edit its settings:
 
 <img src="/docs/images/gitbook/parameter-modal-v9.png" >
 
-> **Info:** Prior to Redash version 7, the parameter settings pane in the Query Editor included a `Global` tickbox, which notified DataReporter that you intended to use this parameter across multiple widgets in a dashboard. The `Global` tickbox has been replaced since version 6 with the new _Parameter Mapping on Dashboards_ functionality described below.
+> **Info:** Prior to DataReporter version 7, the parameter settings pane in the Query Editor included a `Global` tickbox, which notified DataReporter that you intended to use this parameter across multiple widgets in a dashboard. The `Global` tickbox has been replaced since version 6 with the new _Parameter Mapping on Dashboards_ functionality described below.
 
 > **Danger:** For security reasons, a DataReporter user must have [Full Access](/docs/user-guide/users/permissions-groups/) permission to the data source to use Text-type Query Parameters. Other types such as Date, Date Range, Number or Dropdown list are available to all users.
 

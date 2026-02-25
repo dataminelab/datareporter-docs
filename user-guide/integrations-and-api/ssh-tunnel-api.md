@@ -4,7 +4,7 @@ section: user-guide
 category: integrations-and-api
 ---
 
-# Hosted Redash SSH Tunnel API
+# Hosted DataReporter SSH Tunnel API
 
 SaaS DataReporter traffic always arrives from our public IP address: `52.71.84.157`.
 We recommend directly whitelisting this address through your firewall.

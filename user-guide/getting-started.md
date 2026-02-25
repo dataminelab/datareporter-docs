@@ -1,6 +1,6 @@
 ---
 title: Getting Started
-description: Getting started with Redash is easy and takes only a few minutes - connect a data source, write a query, add a visualization, create a dashboard and invite your colleagues!
+description: Getting started with DataReporter is easy and takes only a few minutes - connect a data source, write a query, add a visualization, create a dashboard and invite your colleagues!
 section: user-guide
 category: getting-started
 order: 1
@@ -20,7 +20,7 @@ The first thing you'll want to do is connect a data source ([see supported data 
 
 ![](/docs/images/settings_icon.png)
 
-> **Note:** If you’re using the Hosted Redash service and your data source is behind a firewall, you need to **allow access from the IP address `52.71.84.157`** in your database firewall/Security Groups.
+> **Note:** If you’re using the Hosted DataReporter service and your data source is behind a firewall, you need to **allow access from the IP address `52.71.84.157`** in your database firewall/Security Groups.
 
 > **Note:** We recommend using a user with **read-only permissions**, if possible.
 

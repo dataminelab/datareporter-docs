@@ -21,7 +21,7 @@ Zapier or IFTTT to kickoff workflows such as user onboarding or support tickets.
 Alerts complement scheduled queries, but their criteria are checked after every
 execution.
 
-> **Warning:** For information on alerts prior to Redash V9, see our
+> **Warning:** For information on alerts prior to DataReporter V9, see our
 > [**Legacy Alerts doc**](setting-up-an-alert-v8).
 
 > **Warning:** A query schedule is not required but is _highly recommended_ for alerts. If you

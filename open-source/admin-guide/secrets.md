@@ -1,5 +1,5 @@
 ---
-title: Secret Keys in Redash
+title: Secret Keys in DataReporter
 section: open-source
 category: admin-guide
 toc: true

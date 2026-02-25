@@ -4,7 +4,7 @@ section: data-sources
 category: querying
 ---
 
-> **Warning:** Redash V9 introduced an ODBC connector for SQL Server that improves Azure compatibility. Going forward, use the **Microsoft SQL Server (ODBC)** type. The old connector will be removed in a future release.
+> **Warning:** DataReporter V9 introduced an ODBC connector for SQL Server that improves Azure compatibility. Going forward, use the **Microsoft SQL Server (ODBC)** type. The old connector will be removed in a future release.
 
 ![](/docs/images/gitbook/mssql-ds-choice.png)
 

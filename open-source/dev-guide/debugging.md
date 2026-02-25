@@ -1,5 +1,5 @@
 ---
-title: Debugging a Redash Server on Docker Using Visual Studio Code
+title: Debugging a DataReporter Server on Docker Using Visual Studio Code
 section: open-source
 category: dev-guide
 ---

@@ -29,9 +29,9 @@ usually required on shared hosts like MLab.
 
 ![](/docs/images/gitbook/mongo-setup.png)
 
-> **Info:** Redash V10 adds the _Username_ and _Password_ fields. The intention is to allow users to keep MongoDB passwords secret in the data source configuration. Previously this was not possible as the password would have to be embedded into the _Connection String_, which was available in plaintext in the UI and REST API.
+> **Info:** DataReporter V10 adds the _Username_ and _Password_ fields. The intention is to allow users to keep MongoDB passwords secret in the data source configuration. Previously this was not possible as the password would have to be embedded into the _Connection String_, which was available in plaintext in the UI and REST API.
 > 
-> As of Redash V10, if a user supplies the Username and/or Password config field(s), DataReporter will use them to override whatever is set in the connection string when creating the PyMongo client. This allows for existing, pre-patch MongoDB sources to still function, while allowing new/modified MongoDB sources to have secret credentials
+> As of DataReporter V10, if a user supplies the Username and/or Password config field(s), DataReporter will use them to override whatever is set in the connection string when creating the PyMongo client. This allows for existing, pre-patch MongoDB sources to still function, while allowing new/modified MongoDB sources to have secret credentials
 
 ## MongoDB Atlas
 

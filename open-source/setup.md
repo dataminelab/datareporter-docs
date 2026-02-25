@@ -1,5 +1,5 @@
 ---
-title: Setting up a Redash Instance
+title: Setting up a DataReporter Instance
 section: open-source
 category: setup
 order: 1

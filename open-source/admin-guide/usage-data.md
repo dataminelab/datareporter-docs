@@ -4,7 +4,7 @@ section: open-source
 category: admin-guide
 ---
 
-Starting from Redash version `8-beta.2` we will give you an option to share anonymous aggregated
+Starting from DataReporter version `8-beta.2` we will give you an option to share anonymous aggregated
 usage data when DataReporter does a version check. This is opt-in, but we encourage you to join as it
 helps us better direct future product efforts.
 

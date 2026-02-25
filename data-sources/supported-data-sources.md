@@ -7,7 +7,7 @@ order: 1
 
 DataReporter supports the following Data Sources:
 
-| Data Source                              | Hosted Redash | Self-Hosted Redash |
+| Data Source                              | Hosted DataReporter | Self-Hosted DataReporter |
 | ---------------------------------------- | ------------- | ------------------ |
 | Amazon Athena                            | ✓             | ✓                  |
 | Amazon CloudWatch                        | ✓             | ✓                  |

@@ -8,7 +8,7 @@ category: querying
 
 You need a **Username** (the email address you use to login) and **[API Token](https://confluence.atlassian.com/cloud/api-tokens-938839638.html)** to connect to Jira. The token behaves like a password.
 
-> **Warning:** Before Redash V8 the JIRA setup screen asked for a password. You still need an API token to connect successfully. Use your API token instead of your password.
+> **Warning:** Before DataReporter V8 the JIRA setup screen asked for a password. You still need an API token to connect successfully. Use your API token instead of your password.
 
 ![](/docs/images/gitbook/jira-setup.png)
 

@@ -1,5 +1,5 @@
 ---
-title: Inviting Users to Use Redash
+title: Inviting Users to Use DataReporter
 section: user-guide
 category: users
 ---

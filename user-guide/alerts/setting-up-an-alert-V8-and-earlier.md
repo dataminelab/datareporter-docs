@@ -14,7 +14,7 @@ keywords:
   - alert destination
 ---
 
-> **Danger:** This doc is for Redash V8 and earlier.
+> **Danger:** This doc is for DataReporter V8 and earlier.
 
 DataReporter alerts can notify you when your [**Scheduled Queries**](/docs/user-guide/querying/scheduling-a-query/) match some arbitrary criteria. Use them to monitor business data or integrated them with tools like Zapier or IFTTT to trigger business processes like user onbarding or support tickets. While Alerts are usually combined with scheduled queries, the Alert criteria will be evaluated every time the query is executed.
 

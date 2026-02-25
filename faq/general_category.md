@@ -13,7 +13,7 @@ DataReporter features:
 1. **Browser-based**: Everything in your browser, with a shareable URL.
 2. **Ease-of-use**: Become immediately productive with data without the need to master complex software.
 3. **Query editor**: Quickly compose SQL and NoSQL queries with a schema browser and auto-complete.
-4. **Visualization and dashboards**: Create [beautiful visualizations](https://redash.io/help/user-guide/visualizations/visualization-types) with drag and drop, and combine them into a single dashboard.
+4. **Visualization and dashboards**: Create [beautiful visualizations](/docs/user-guide/visualizations/visualization-types/) with drag and drop, and combine them into a single dashboard.
 5. **Sharing**: Collaborate easily by sharing visualizations and their associated queries, enabling peer review of reports and queries.
 6. **Schedule refreshes**: Automatically update your charts and dashboards at regular intervals you define.
 7. **Alerts**: Define conditions and be alerted instantly when your data changes.
