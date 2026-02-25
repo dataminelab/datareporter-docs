@@ -136,7 +136,7 @@ We support [MongoDB Extended JSON](https://docs.mongodb.com/manual/reference/mon
 
 It accepts a human-readable string like the above (“3 years ago”, “yesterday”, etc) or timestamps.
 
-> **Info:** The `$humanTime` function is also needed when using [Query Parameters](/docs/user-guide/querying/query-parameters) of type Date or Date/Time with MongoDB, due to the difference between the format DataReporter uses and the one MongoDB expects.
+> **Info:** The `$humanTime` function is also needed when using [Query Parameters](/docs/user-guide/querying/query-parameters/) of type Date or Date/Time with MongoDB, due to the difference between the format DataReporter uses and the one MongoDB expects.
 > 
 > When using a Date (or Date Range) parameter, wrap it with a `$humanTime` object: `{{param}}` becomes `{"$humanTime": "{{param}} 00:00"}` (the ` 00:00` suffix is needed only with Date parameters, for Date Time parameters you should skip it).
 

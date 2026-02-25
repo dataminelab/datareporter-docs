@@ -25,7 +25,7 @@ default view.
 
 ### Cohort
 
-Further documentation available [here](/docs/user-guide/visualizations/cohort-howto).
+Further documentation available [here](/docs/user-guide/visualizations/cohort-howto/).
 
 ![](/docs/images/visualization_examples/cohort.png)
 

@@ -76,13 +76,26 @@ description: Optional SEO description
 
 ### Internal Links
 
-Link to other docs pages using: `[link text](/docs/section/page-name)`
+Link to other docs pages using: `[link text](/docs/section/page-name/)`
+
+> **Trailing slash required:** All internal links **must** end with a trailing slash (`/`). This is enforced by CI — PRs with missing trailing slashes will fail the lint check.
 
 Examples:
 ```markdown
-[Writing Queries](/docs/user-guide/querying/writing-queries)
-[Supported Data Sources](/docs/data-sources/setup/supported-data-sources)
+[Writing Queries](/docs/user-guide/querying/writing-queries/)
+[Supported Data Sources](/docs/data-sources/supported-data-sources/)
 ```
+
+Bad (will fail CI):
+```markdown
+[Writing Queries](/docs/user-guide/querying/writing-queries)
+```
+
+### Navigation Sidebar
+
+The docs navigation sidebar is defined in [`docs-nav.json`](docs-nav.json) in this repo. The website reads this file at build time to render the sidebar. To add, remove, or reorder pages in the sidebar, edit `docs-nav.json` directly.
+
+All links in `docs-nav.json` must also end with a trailing slash — this is checked by the same CI workflow.
 
 ## Previewing Your Changes
 

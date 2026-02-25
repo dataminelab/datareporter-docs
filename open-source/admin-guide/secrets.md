@@ -51,7 +51,7 @@ $ pwgen -1s 64
 QinPGTd7Ulec03lar0vkI9ojqmXsuw4VOyirnC5NuvEdJSCwLwesmknNygXITunT
 ```
 
-> **Info:** The official DataReporter cloud images found [here](/docs/open-source/setup) generate unique secret keys automatically during deployment. If you deployed DataReporter manually with Docker Compose you can create a `.env` file adjacent to `compose.yaml` and set your environment variables there.
+> **Info:** The official DataReporter cloud images found [here](/docs/open-source/setup/) generate unique secret keys automatically during deployment. If you deployed DataReporter manually with Docker Compose you can create a `.env` file adjacent to `compose.yaml` and set your environment variables there.
 
 ## Changing a Secret Keys
 

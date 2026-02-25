@@ -16,7 +16,7 @@ keywords:
 
 ## 1. Add A Data Source
 
-The first thing you'll want to do is connect a data source ([see supported data sources](/docs/data-sources/setup/supported-data-sources)). You can open the Data Sources management page by clicking the Settings icon:
+The first thing you'll want to do is connect a data source ([see supported data sources](/docs/data-sources/setup/supported-data-sources/)). You can open the Data Sources management page by clicking the Settings icon:
 
 ![](/docs/images/settings_icon.png)
 
@@ -28,22 +28,22 @@ The first thing you'll want to do is connect a data source ([see supported data 
 
 ## 2. Write A Query
 
-Once you've connected a data source, it's time to write a query: **click on "Create" in the navigation bar, and then choose "Query"**. See the [“Writing Queries” page](/docs/user-guide/querying/writing-queries) for detailed instructions on how to write queries.
+Once you've connected a data source, it's time to write a query: **click on "Create" in the navigation bar, and then choose "Query"**. See the [“Writing Queries” page](/docs/user-guide/querying/writing-queries/) for detailed instructions on how to write queries.
 
 ![](/docs/images/gifs/queries/add_new_query.gif)
 
 ## 3. Add Visualizations
 
 By default, your query results (data) will appear in a simple table. Visualizations are much better to help you digest complex information, so let's visualize your data. DataReporter supports [multiple types of
-visualizations](/docs/user-guide/visualizations/visualization-types) so you should find one that suits your needs.
+visualizations](/docs/user-guide/visualizations/visualization-types/) so you should find one that suits your needs.
 
-Click the “New Visualization” button just above the results to select the perfect visualization for your needs. You can view more detailed instructions [here](/docs/user-guide/visualizations/visualizations-how-to).
+Click the “New Visualization” button just above the results to select the perfect visualization for your needs. You can view more detailed instructions [here](/docs/user-guide/visualizations/visualizations-how-to/).
 
 ![](/docs/images/gifs/visualization/new_viz.gif)
 
 ## 4. Create A Dashboard
 
-You can combine visualizations and text into thematic & powerful dashboards. Add a new dashboard by clicking on "Create" in the navigation bar, and then choose "Dashboard". Dashboards are visible for your team members or they can be shared publicly. For more details, [click here](/docs/user-guide/dashboards/dashboard-editing).
+You can combine visualizations and text into thematic & powerful dashboards. Add a new dashboard by clicking on "Create" in the navigation bar, and then choose "Dashboard". Dashboards are visible for your team members or they can be shared publicly. For more details, [click here](/docs/user-guide/dashboards/dashboard-editing/).
 
 ![](/docs/images/gifs/dashboards/dashboards.gif)
 

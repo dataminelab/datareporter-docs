@@ -4,7 +4,7 @@ section: open-source
 category: dev-guide
 ---
 
-If you've followed [Docker Based Developer Installation Guide](/docs/open-source/dev-guide/docker), your DataReporter server is running inside a Docker container and cannot be debugged directly. If you wish to debug server code, you will need to use remote debugging.
+If you've followed [Docker Based Developer Installation Guide](/docs/open-source/dev-guide/docker/), your DataReporter server is running inside a Docker container and cannot be debugged directly. If you wish to debug server code, you will need to use remote debugging.
 
 ## Initial Setup
 

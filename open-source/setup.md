@@ -86,7 +86,7 @@ Note that the script assumes you are running it on a "clean" machine. If you’r
 
 For every DataReporter release we also create updated [Docker image](https://hub.docker.com/r/redash/redash). Our image follows best practices and can be used in any container orchestation platforms like Kubernetes, ECS or just simply with Docker Compose (which we use in our images).
 
-> **Warning:** If you do not use one of our cloud images, you must manually set up DataReporter's [secret keys](/docs/open-source/admin-guide/secrets):
+> **Warning:** If you do not use one of our cloud images, you must manually set up DataReporter's [secret keys](/docs/open-source/admin-guide/secrets/):
 > 
 > 1. Create a `.env` in the same folder as your `compose.yaml` file.
 > 2. Write any sensitive environment variables in bash syntax:
@@ -99,7 +99,7 @@ For every DataReporter release we also create updated [Docker image](https://hub
 > 
 > Do not commit this file to version control.
 
-For development environment setup, please refer to the [developer guide](/docs/open-source/dev-guide) (which includes Docker specific instructions as well).
+For development environment setup, please refer to the [developer guide](/docs/open-source/dev-guide/) (which includes Docker specific instructions as well).
 
 To run DataReporter you need several instances of DataReporter (API server and background workers to run queries) along with Redis and PostgreSQL. If you don't want or can't use our images or [Setup Script](https://github.com/getredash/setup), you can refer to the [Docker Compose configuration](https://github.com/getredash/setup/blob/master/data/compose.yaml) to understand what services you need to define.
 
@@ -137,7 +137,7 @@ It’s recommended to use some mail service, like [Amazon SES](https://aws.amazo
 
 ### Google OAuth Setup
 
-If you want to use Google OAuth to authenticate users, you need to create a Google Developers project (see [instructions](/docs/open-source/admin-guide/google-developer-account-setup) and then add the needed configuration in the `/opt/redash/env` file:
+If you want to use Google OAuth to authenticate users, you need to create a Google Developers project (see [instructions](/docs/open-source/admin-guide/google-developer-account-setup/) and then add the needed configuration in the `/opt/redash/env` file:
 
 - `REDASH_GOOGLE_CLIENT_ID` (Google OAuth Client ID)
 - `REDASH_GOOGLE_CLIENT_SECRET` (Google OAuth Client Secret)
@@ -148,11 +148,11 @@ Once updated, restart the web server (`docker-compose up -d server`). Once enabl
 
 ### Other Configuration Options
 
-DataReporter uses environment variables for configuration. For a full list of environment variables, see the [settings article](/docs/open-source/admin-guide/env-vars-settings).
+DataReporter uses environment variables for configuration. For a full list of environment variables, see the [settings article](/docs/open-source/admin-guide/env-vars-settings/).
 
 ### HTTPS
 
-> **Note:** If this is a production setup, you should enforce HTTPS and make sure you set the cookie secret (see [instructions](/docs/open-source/admin-guide/https-ssl-setup)).
+> **Note:** If this is a production setup, you should enforce HTTPS and make sure you set the cookie secret (see [instructions](/docs/open-source/admin-guide/https-ssl-setup/)).
 
 ### Health Check for Installation
 
@@ -165,4 +165,4 @@ PONG.
 
 ## How to upgrade?
 
-It’s recommended to upgrade when new releases are available to benefit from bug fixes and new features. See [_here_](/docs/open-source/admin-guide/how-to-upgrade) for full upgrade instructions.
+It’s recommended to upgrade when new releases are available to benefit from bug fixes and new features. See [_here_](/docs/open-source/admin-guide/how-to-upgrade/) for full upgrade instructions.

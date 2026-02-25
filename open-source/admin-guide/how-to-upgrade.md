@@ -5,7 +5,7 @@ category: admin-guide
 order: 1
 ---
 
-> **Important:** These instructions are for users of our new Docker-based instance. If you run our older instances (or the old bootstrap script) check the [legacy guide](/docs/open-source/admin-guide/how-to-upgrade-legacy).
+> **Important:** These instructions are for users of our new Docker-based instance. If you run our older instances (or the old bootstrap script) check the [legacy guide](/docs/open-source/admin-guide/how-to-upgrade-legacy/).
 
 We recommended you upgrade your DataReporter instance to the latest release so you can benefit from new features and bug fixes. This document assumes you used our images to set up your instance of DataReporter.
 

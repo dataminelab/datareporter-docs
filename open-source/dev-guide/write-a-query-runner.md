@@ -7,7 +7,7 @@ toc: true
 
 ## Intro
 
-DataReporter already connects to [many](/docs/data-sources/querying/supported-data-sources) databases and REST APIs. To add support for a new data source type in DataReporter, you need to implement a Query Runner for it. A Query Runner is a Python class. This doc page shows the process of writing a new Query Runner. It uses the Firebolt Query Runner as an example.
+DataReporter already connects to [many](/docs/data-sources/querying/supported-data-sources/) databases and REST APIs. To add support for a new data source type in DataReporter, you need to implement a Query Runner for it. A Query Runner is a Python class. This doc page shows the process of writing a new Query Runner. It uses the Firebolt Query Runner as an example.
 
 Start by creating a new `firebolt.py` file in the `/redash/query_runner` directory and implement the `BaseQueryRunner` class:
 

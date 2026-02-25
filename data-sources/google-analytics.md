@@ -30,7 +30,7 @@ Create datasource of "Google Analytics" type with the JSON file generated in the
 
 # Queries
 
-Google Analytics uses JSON document-style queries. You can get an idea of possible field types and dimensions using the [Query Explorer tool](https://ga-dev-tools.appspot.com/query-explorer/). Once you've imported data into DataReporter, you can use the [Query Results Data Source](/docs/user-guide/querying/query-results-data-source) to examine the output with SQL syntax.
+Google Analytics uses JSON document-style queries. You can get an idea of possible field types and dimensions using the [Query Explorer tool](https://ga-dev-tools.appspot.com/query-explorer/). Once you've imported data into DataReporter, you can use the [Query Results Data Source](/docs/user-guide/querying/query-results-data-source/) to examine the output with SQL syntax.
 
 ## Example Queries
 

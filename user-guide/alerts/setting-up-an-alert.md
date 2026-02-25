@@ -15,7 +15,7 @@ keywords:
 ---
 
 DataReporter alerts notify you when a field returned by a [**Scheduled
-Query**](/docs/user-guide/querying/scheduling-a-query) meets a
+Query**](/docs/user-guide/querying/scheduling-a-query/) meets a
 threshhold. Use them to monitor your business. Or integrate them with tools like
 Zapier or IFTTT to kickoff workflows such as user onboarding or support tickets.
 Alerts complement scheduled queries, but their criteria are checked after every
@@ -87,10 +87,10 @@ Finally, pick a **Template**. The default template is a message with links to
 the Alert configuration screen and the Query screen. Many users will want to
 include more specific information about the Alert. To do this you can [Customize
 The Alert
-Template](/docs/user-guide/alerts/custom-alert-notifications).
+Template](/docs/user-guide/alerts/custom-alert-notifications/).
 
 When you're finished, click **Create Alert** and then choose an [Alert
-Destination](/docs/user-guide/alerts/creating-new-alert-destination).
+Destination](/docs/user-guide/alerts/creating-new-alert-destination/).
 If you skip this step you will not be notified when the alert is triggered.
 
 ![](/docs/images/gitbook/alert_destination.png)

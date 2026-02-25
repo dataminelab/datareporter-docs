@@ -27,7 +27,7 @@ You can configure DataReporter to allow any user with a Google account from the 
 
 Follow these steps to change the environment variables and UI settings to enable Google Login:
 
-1. Register your instance of DataReporter with your Google org by visiting the [cloud console](https://console.cloud.google.com/apis/credentials). You must [create a developers project](/docs/open-source/admin-guide/google-developer-account-setup) if you have not already. Then follow the **Create Credentials** flow.
+1. Register your instance of DataReporter with your Google org by visiting the [cloud console](https://console.cloud.google.com/apis/credentials). You must [create a developers project](/docs/open-source/admin-guide/google-developer-account-setup/) if you have not already. Then follow the **Create Credentials** flow.
 2. Set the **Authorized Redirect URL(s)** to `http(s)://${REDASH_BASEURL}/oauth/google_callback`.
 3. During setup you will obtain a client id and a client secret. Use these to set the `REDASH_GOOGLE_CLIENT_ID` and `REDASH_GOOGLE_CLIENT_SECRET` environment variables.
 4. Restart your DataReporter instance.

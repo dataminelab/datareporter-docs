@@ -16,7 +16,7 @@ keywords:
 
 > **Danger:** This doc is for Redash V8 and earlier.
 
-DataReporter alerts can notify you when your [**Scheduled Queries**](/docs/user-guide/querying/scheduling-a-query) match some arbitrary criteria. Use them to monitor business data or integrated them with tools like Zapier or IFTTT to trigger business processes like user onbarding or support tickets. While Alerts are usually combined with scheduled queries, the Alert criteria will be evaluated every time the query is executed.
+DataReporter alerts can notify you when your [**Scheduled Queries**](/docs/user-guide/querying/scheduling-a-query/) match some arbitrary criteria. Use them to monitor business data or integrated them with tools like Zapier or IFTTT to trigger business processes like user onbarding or support tickets. While Alerts are usually combined with scheduled queries, the Alert criteria will be evaluated every time the query is executed.
 
 > **Warning:** A query schedule is not mandatory but is _highly recommended_ for alerts. If you configure an Alert without a query schedule you will only receive notifications if a user in your organization manually executes the given query.
 
@@ -45,7 +45,7 @@ Use the settings panel to configure your alert:
 - **Reference** is the absolute value that your _Value Column_ will be compared to. The most recent query result is shown as the **Value**
 - **Rearm seconds** effects how frequently you will receive notifications when your query meets the Alert criteria and does not change. See further discussion below.
 
-Save your alert. After you do this, you can add an [alert destination](/docs/user-guide/alerts/creating-new-alert-destination). If you skip this step you will not be notified when the alert is triggered.
+Save your alert. After you do this, you can add an [alert destination](/docs/user-guide/alerts/creating-new-alert-destination/). If you skip this step you will not be notified when the alert is triggered.
 
 ![](/docs/images/gitbook/alert_destination.png)
 

@@ -42,7 +42,7 @@ Dashboard ids are guaranteed to be unique. But multiple dashboards may use the s
 
 # Picking Visualizations
 
-By default, query results are shown in a table. At the moment it's not possible to create a new visualization from the "Add Widget" menu, so you'll need to open the query and add the visualization there beforehand ([instructions](/docs/user-guide/visualizations/visualizations-how-to)).
+By default, query results are shown in a table. At the moment it's not possible to create a new visualization from the "Add Widget" menu, so you'll need to open the query and add the visualization there beforehand ([instructions](/docs/user-guide/visualizations/visualizations-how-to/)).
 
 # Adding Text Boxes
 
@@ -84,7 +84,7 @@ If you want this to happen periodically you can activate Automatic Dashboard Ref
 
 ![](/docs/images/gitbook/dashboard-refresh.png)
 
-> **Info:** Automatic Dashboard Refresh occurs as part of the DataReporter frontend application. Your refresh schedule is only in-effect as long as a logged-in user has the dashboard open in their browser. To guarantee that your queries are executed regularly (which is important for alerts), you should use a [Scheduled Query](/docs/user-guide/querying/scheduling-a-query) instead.
+> **Info:** Automatic Dashboard Refresh occurs as part of the DataReporter frontend application. Your refresh schedule is only in-effect as long as a logged-in user has the dashboard open in their browser. To guarantee that your queries are executed regularly (which is important for alerts), you should use a [Scheduled Query](/docs/user-guide/querying/scheduling-a-query/) instead.
 
 On public dashboards there is no Refresh button. You can add `refresh` to the query string. And for dashboards with parameters you can trigger a refresh by changing a parameter value and clicking **Apply Changes**.
 

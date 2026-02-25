@@ -7,7 +7,7 @@ toc: true
 
 Sometimes you need to visualize data not contained in an RDBMS or NOSQL data store, but available from some HTTP API. For those times, DataReporter provides the `JSON` data source (first introduced in DataReporter v8).
 
-DataReporter treats all incoming data from the `JSON` data source as text; so you should be prepared to use [table formatting](/docs/user-guide/visualizations/table-visualizations) when rendering the data.
+DataReporter treats all incoming data from the `JSON` data source as text; so you should be prepared to use [table formatting](/docs/user-guide/visualizations/table-visualizations/) when rendering the data.
 
 # JSON Data Source Type
 
@@ -104,7 +104,7 @@ The body of your query will include only the URL that returns data, for example:
 http://myserver/path/myquery
 ```
 
-To manipulate the data (filter, sort, aggregate etc.) you can use the [Query Results Data Source](/docs/user-guide/querying/query-results-data-source).
+To manipulate the data (filter, sort, aggregate etc.) you can use the [Query Results Data Source](/docs/user-guide/querying/query-results-data-source/).
 
 ## Required Data Structure
 

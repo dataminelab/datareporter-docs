@@ -9,7 +9,7 @@ toc: true
 
 For data sources that support a native query syntax (SQL or NOSQL), you can choose your data return format, which columns to return, and in what order by modifying your query. But sources like CSV files or Google Sheets don't support a query syntax. So DataReporter allows you to manually reorder, hide, and format data in your table visualizations.
 
-> **Info:** If you absolutely depend on a feature of SQL, you can use the [Query Results Data Source](/docs/user-guide/querying/query-results-data-source) to post-process your data.
+> **Info:** If you absolutely depend on a feature of SQL, you can use the [Query Results Data Source](/docs/user-guide/querying/query-results-data-source/) to post-process your data.
 
 ## Visualization Settings
 
@@ -38,7 +38,7 @@ DataReporter will render a column as text if your underlying data source does no
 - Zero-pad all integers
 - Prepend or Append text to your number fields
 
-A full reference for rendering numbers in DataReporter is available [here](/docs/user-guide/visualizations/formatting-numbers). You can read about how to format dates [here](https://momentjs.com/docs/#/displaying/format/).
+A full reference for rendering numbers in DataReporter is available [here](/docs/user-guide/visualizations/formatting-numbers/). You can read about how to format dates [here](https://momentjs.com/docs/#/displaying/format/).
 
 ## **Special Data Types**
 

@@ -1,0 +1,133 @@
+{
+  "sections": [
+    {
+      "title": "User Guide",
+      "slug": "user-guide",
+      "link": "/docs/user-guide/getting-started/",
+      "items": [
+        {
+          "title": "Getting Started",
+          "link": "/docs/user-guide/getting-started/"
+        },
+        {
+          "title": "Querying",
+          "items": [
+            { "title": "Writing Queries", "link": "/docs/user-guide/querying/writing-queries/" },
+            { "title": "Query Parameters", "link": "/docs/user-guide/querying/query-parameters/" },
+            { "title": "Query Filters", "link": "/docs/user-guide/querying/query-filters/" },
+            { "title": "Query Snippets", "link": "/docs/user-guide/querying/query-snippets/" },
+            { "title": "Query Results Data Source", "link": "/docs/user-guide/querying/query-results-data-source/" },
+            { "title": "Scheduling a Query", "link": "/docs/user-guide/querying/scheduling-a-query/" },
+            { "title": "Download Query Results", "link": "/docs/user-guide/querying/download-query-results/" },
+            { "title": "Favorites & Tagging", "link": "/docs/user-guide/querying/favorites-tagging/" }
+          ]
+        },
+        {
+          "title": "Visualizations",
+          "items": [
+            { "title": "How to Create", "link": "/docs/user-guide/visualizations/visualizations-how-to/" },
+            { "title": "Visualization Types", "link": "/docs/user-guide/visualizations/visualization-types/" },
+            { "title": "Chart Visualizations", "link": "/docs/user-guide/visualizations/chart-visualizations/" },
+            { "title": "Table Visualizations", "link": "/docs/user-guide/visualizations/table-visualizations/" },
+            { "title": "Pivot Tables", "link": "/docs/user-guide/visualizations/pivot-table-visualizations/" },
+            { "title": "Cohort", "link": "/docs/user-guide/visualizations/cohort-howto/" },
+            { "title": "Funnel Chart", "link": "/docs/user-guide/visualizations/funnel-chart-how-to/" },
+            { "title": "Formatting Numbers", "link": "/docs/user-guide/visualizations/formatting-numbers/" },
+            { "title": "Formatting Axis", "link": "/docs/user-guide/visualizations/formatting-axis/" },
+            { "title": "Turnilo Overview", "link": "/docs/user-guide/visualizations/turnilo-overview/" }
+          ]
+        },
+        {
+          "title": "Dashboards",
+          "items": [
+            { "title": "Dashboard Editing", "link": "/docs/user-guide/dashboards/dashboard-editing/" },
+            { "title": "Sharing Dashboards", "link": "/docs/user-guide/dashboards/sharing-dashboards/" },
+            { "title": "Favorites & Tagging", "link": "/docs/user-guide/dashboards/favorites-tagging/" }
+          ]
+        },
+        {
+          "title": "Alerts",
+          "items": [
+            { "title": "Setting Up an Alert", "link": "/docs/user-guide/alerts/setting-up-an-alert/" },
+            { "title": "Alert Destinations", "link": "/docs/user-guide/alerts/creating-new-alert-destination/" },
+            { "title": "Custom Notifications", "link": "/docs/user-guide/alerts/custom-alert-notifications/" },
+            { "title": "Multiple Columns", "link": "/docs/user-guide/alerts/alert-multiple-columns/" }
+          ]
+        },
+        {
+          "title": "Users & Permissions",
+          "items": [
+            { "title": "Permissions & Groups", "link": "/docs/user-guide/users/permissions-groups/" },
+            { "title": "Creating Groups", "link": "/docs/user-guide/users/creating-editing-groups/" },
+            { "title": "Inviting Users", "link": "/docs/user-guide/users/inviting-users/" },
+            { "title": "Authentication Options", "link": "/docs/user-guide/users/authentication-options/" },
+            { "title": "Profile Pictures", "link": "/docs/user-guide/users/profile-pictures/" }
+          ]
+        },
+        {
+          "title": "Integrations & API",
+          "items": [
+            { "title": "API", "link": "/docs/user-guide/integrations-and-api/api/" },
+            { "title": "SSH Tunnel", "link": "/docs/user-guide/integrations-and-api/ssh-tunnel-api/" },
+            { "title": "Zapier", "link": "/docs/user-guide/integrations-and-api/creating-a-zap/" },
+            { "title": "Slack Integration", "link": "/docs/user-guide/integrations-and-api/slack-bot-posting-visualizations-to-slack/" },
+            { "title": "Google Sheets", "link": "/docs/user-guide/integrations-and-api/how-to-use-google-spreadsheets-importdata-function/" }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Data Sources",
+      "slug": "data-sources",
+      "link": "/docs/data-sources/supported-data-sources/",
+      "items": [
+        { "title": "Supported Data Sources", "link": "/docs/data-sources/supported-data-sources/" },
+        { "title": "Amazon Athena", "link": "/docs/data-sources/amazon-athena/" },
+        { "title": "Amazon Redshift", "link": "/docs/data-sources/amazon-redshift/" },
+        { "title": "Amazon CloudWatch", "link": "/docs/data-sources/amazon-cloudwatch/" },
+        { "title": "Azure SQL Database", "link": "/docs/data-sources/azure-sql-database/" },
+        { "title": "BigQuery", "link": "/docs/data-sources/bigquery/" },
+        { "title": "CSV Files", "link": "/docs/data-sources/csv-files/" },
+        { "title": "Databricks", "link": "/docs/data-sources/databricks/" },
+        { "title": "DynamoDB", "link": "/docs/data-sources/dynamodb/" },
+        { "title": "Elasticsearch", "link": "/docs/data-sources/elasticsearch/" },
+        { "title": "Google Analytics", "link": "/docs/data-sources/google-analytics/" },
+        { "title": "Google Sheets", "link": "/docs/data-sources/google-sheets/" },
+        { "title": "Jira", "link": "/docs/data-sources/jira/" },
+        { "title": "JSON API", "link": "/docs/data-sources/json-api/" },
+        { "title": "MongoDB", "link": "/docs/data-sources/mongodb/" },
+        { "title": "Python", "link": "/docs/data-sources/python/" }
+      ]
+    },
+    {
+      "title": "Open Source",
+      "slug": "open-source",
+      "link": "/docs/open-source/setup/",
+      "items": [
+        { "title": "Setup", "link": "/docs/open-source/setup/" },
+        {
+          "title": "Admin Guide",
+          "items": [
+            { "title": "Environment Variables", "link": "/docs/open-source/admin-guide/env-vars-settings/" },
+            { "title": "How to Upgrade", "link": "/docs/open-source/admin-guide/how-to-upgrade/" },
+            { "title": "HTTPS/SSL Setup", "link": "/docs/open-source/admin-guide/https-ssl-setup/" },
+            { "title": "LDAP Authentication", "link": "/docs/open-source/admin-guide/ldap-authentication/" },
+            { "title": "Maintenance", "link": "/docs/open-source/admin-guide/maintenance/" },
+            { "title": "Secrets", "link": "/docs/open-source/admin-guide/secrets/" },
+            { "title": "Datacube Configuration", "link": "/docs/open-source/admin-guide/datacube-configuration/" },
+            { "title": "Google Dev Account", "link": "/docs/open-source/admin-guide/google-developer-account-setup/" },
+            { "title": "Usage Data", "link": "/docs/open-source/admin-guide/usage-data/" }
+          ]
+        },
+        {
+          "title": "Developer Guide",
+          "items": [
+            { "title": "Debugging", "link": "/docs/open-source/dev-guide/debugging/" },
+            { "title": "Remote Server", "link": "/docs/open-source/dev-guide/remote-server/" },
+            { "title": "Write a Query Runner", "link": "/docs/open-source/dev-guide/write-a-query-runner/" }
+          ]
+        }
+      ]
+    }
+  ]
+}

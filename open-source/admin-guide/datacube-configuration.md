@@ -12,7 +12,9 @@ keywords:
   - dimensions
   - measures
   - YAML
-description: "How to configure and manage Turnilo datacubes in DataReporter, including auto-generation, manual editing, validation, and troubleshooting."
+  - attributes
+  - configuration
+description: "Complete guide to configuring Turnilo datacubes in DataReporter — auto-generation, properties, dimensions, measures, Plywood expressions, validation, and troubleshooting."
 ---
 
 ## Datacube Configuration
@@ -42,9 +44,7 @@ The first `TIME` column becomes the `timeAttribute`. The first numeric column be
 
 This gives you a working starting point. You should review and customize it for your use case.
 
-### Editing the Config
-
-The datacube configuration is written in YAML. Here is a minimal working example:
+### Quick Example
 
 ```yaml
 dataCubes:
@@ -52,15 +52,19 @@ dataCubes:
     title: Orders
     clusterName: postgres
     timeAttribute: created_at
-    defaultSortMeasure: revenue
+    defaultSortMeasure: total_revenue
     defaultSelectedMeasures:
-      - revenue
+      - total_revenue
+      - order_count
 
     attributes:
       - name: created_at
         type: TIME
         nativeType: TIMESTAMP WITH TIME ZONE
-      - name: customer
+      - name: customer_email
+        type: STRING
+        nativeType: CHARACTER VARYING
+      - name: status
         type: STRING
         nativeType: CHARACTER VARYING
       - name: revenue
@@ -72,46 +76,289 @@ dataCubes:
         title: Created At
         formula: $created_at
         kind: time
-      - name: customer
-        title: Customer
-        formula: $customer
+      - name: customer_email
+        title: Customer Email
+        formula: $customer_email
+      - name: status
+        title: Order Status
+        formula: $status
 
     measures:
-      - name: revenue
-        title: Revenue
+      - name: order_count
+        title: Order Count
+        formula: $main.count()
+      - name: total_revenue
+        title: Total Revenue
         formula: $main.sum($revenue)
+        units: USD
+        format: "$0,0.00"
 ```
 
-For the complete property reference, expression syntax, and advanced examples, see [Datacube Configuration Reference](/docs/user-guide/visualizations/turnilo-datacube-configuration).
+### Datacube Properties
 
-### Required Fields
+Top-level properties for each datacube entry:
 
-Every datacube must include these fields. The validator will reject configs that are missing any of them:
+| Property | Required | Type | Description |
+|----------|----------|------|-------------|
+| `name` | Yes | string (max 100) | Unique identifier, used in URLs. Changing this breaks existing bookmarks. |
+| `title` | Yes | string (max 120) | Display name shown in the UI. Safe to change. |
+| `description` | No | string (max 256) | Shown on the datacube selection screen. |
+| `clusterName` | Yes | string | Data source type. See [Supported Clusters](#supported-clusters). |
+| `timeAttribute` | Yes | string | Name of the primary time column. Must exist in `attributes`. |
+| `defaultSortMeasure` | Yes | string | Measure used for default sorting. Must exist in `attributes`. |
+| `defaultSelectedMeasures` | Yes | string[] | Measures shown by default. Each must exist in `attributes`. |
+| `attributes` | Yes | list | Column definitions. See [Attributes](#attributes). |
+| `dimensions` | Yes | list | Dimension definitions. See [Dimensions](#dimensions). |
+| `measures` | Yes | list | Measure definitions. See [Measures](#measures). |
 
-| Field | Max Length | Notes |
-|-------|-----------|-------|
-| `name` | 100 chars | Unique identifier, used in URLs |
-| `title` | 120 chars | Display name in the UI |
-| `clusterName` | — | Must match a supported cluster type |
-| `timeAttribute` | — | Must exist in `attributes` |
-| `defaultSortMeasure` | — | Must exist in `attributes` |
-| `defaultSelectedMeasures` | — | Non-empty list, each must exist in `attributes` |
-| `attributes` | — | At least one entry |
-| `dimensions` | — | At least one entry (each needs `name`, `title`, `formula`) |
-| `measures` | — | At least one entry (each needs `name`, `title`, `formula`) |
+#### Additional Properties (Advanced)
 
-### Supported Cluster Types
+These properties are supported by the Turnilo frontend but not enforced by DataReporter's YAML validator:
 
-The `clusterName` field determines which query engine is used:
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `source` | string or string[] | same as `name` | Table or data source name. Multiple values create a union. |
+| `defaultTimezone` | string | `Etc/UTC` | Timezone in Olsen format (e.g., `Europe/Riga`). |
+| `defaultDuration` | string | `P1D` | ISO 8601 duration for initial time range (e.g., `P3D` for 3 days). |
+| `defaultPinnedDimensions` | string[] | — | Dimensions pinned in the right panel. |
+| `subsetFormula` | string | — | Plywood filter applied transparently to all queries. |
+| `introspection` | string | `autofill-all` | Schema discovery strategy. See [Introspection](#introspection). |
+| `maxSplits` | number | 3 | Maximum number of dimension splits. |
+| `maxQueries` | number | 500 | Maximum concurrent queries. |
+| `rollup` | boolean | false | Enable rollup mode (Druid). |
+| `refreshRule` | object | — | Data refresh strategy. See [Refresh Rules](#refresh-rules). |
 
-| Cluster | Data Source | Engine Mapping |
-|---------|------------|----------------|
+### Supported Clusters
+
+The `clusterName` determines which query engine DataReporter uses:
+
+| Cluster Name | Data Source | Engine Mapping |
+|-------------|------------|----------------|
 | `native` | In-memory / JSON | `json` |
 | `postgres` | PostgreSQL | `pg` |
 | `mysql` | MySQL | `mysql` |
 | `bigquery` | Google BigQuery | `bigquery` |
-| `druid` | Apache Druid | `druid` |
 | `athena` | AWS Athena | `athena` |
+| `druid` | Apache Druid | `druid` |
+
+### Attributes
+
+Attributes define the raw columns available from your data source. Every column referenced in dimensions, measures, `timeAttribute`, `defaultSortMeasure`, or `defaultSelectedMeasures` must have a corresponding attribute entry.
+
+```yaml
+attributes:
+  - name: created_at
+    type: TIME
+    nativeType: TIMESTAMP WITH TIME ZONE
+
+  - name: user_id
+    type: NUMBER
+    nativeType: INTEGER
+
+  - name: country
+    type: STRING
+    nativeType: CHARACTER VARYING
+
+  - name: is_active
+    type: BOOLEAN
+    nativeType: BOOLEAN
+```
+
+| Property | Required | Description |
+|----------|----------|-------------|
+| `name` | Yes | Column name, must match the database column exactly. |
+| `type` | Yes | Plywood type: `STRING`, `NUMBER`, `TIME`, or `BOOLEAN`. |
+| `nativeType` | No | Native database type (e.g., `INTEGER`, `FLOAT`, `CHARACTER VARYING`). Informational. |
+
+**Druid-specific native types:** `hyperUnique`, `thetaSketch`, `HLLSketch`, `approximateHistogram`, `quantilesDoublesSketch`. These trigger special aggregation behavior.
+
+### Dimensions
+
+Dimensions define the axes you can slice and filter data by. Each dimension references a column via a Plywood formula.
+
+```yaml
+dimensions:
+  - name: country
+    title: Country
+    formula: $country
+
+  - name: signup_date
+    title: Signup Date
+    formula: $signup_date
+    kind: time
+
+  - name: is_premium
+    title: Premium User
+    formula: $is_premium
+    kind: boolean
+
+  - name: age_group
+    title: Age Group
+    formula: $age
+    kind: number
+```
+
+| Property | Required | Type | Description |
+|----------|----------|------|-------------|
+| `name` | Yes | string | Unique identifier, used in URLs. |
+| `title` | Yes | string | Display name in the UI. |
+| `formula` | Yes | string | Plywood expression. Typically `$columnName`. |
+| `kind` | No | string | Data type: `string` (default), `time`, `number`, `boolean`. |
+| `description` | No | string (max 100) | Tooltip or help text. |
+| `multiValue` | No | boolean | Set `true` for multi-value dimensions (Druid). |
+
+#### Dimension Kinds
+
+| Kind | When to Use | UI Behavior |
+|------|-------------|-------------|
+| `string` | Categorical data (names, IDs, labels) | Filter list, search |
+| `time` | Timestamps and dates | Time picker, granularity selector |
+| `number` | Numeric ranges (age, price) | Histogram bucketing |
+| `boolean` | True/false flags | Toggle filter |
+
+#### Advanced Dimension Formulas
+
+Beyond simple column references (`$columnName`), dimensions support:
+
+```yaml
+# Lookup (Druid)
+- name: country_name
+  formula: $country_code.lookup('country_names')
+
+# Regex extraction
+- name: version_major
+  formula: $version.extract('(\d+\.\d+)')
+
+# Boolean expression
+- name: is_usa
+  formula: $country == 'United States'
+```
+
+### Measures
+
+Measures define the aggregations computed over your data. Each measure uses a Plywood expression against `$main` (the data segment).
+
+```yaml
+measures:
+  - name: count
+    title: Row Count
+    formula: $main.count()
+
+  - name: total_revenue
+    title: Total Revenue
+    formula: $main.sum($revenue)
+    units: USD
+    format: "$0,0.00"
+
+  - name: avg_order_value
+    title: Avg Order Value
+    formula: $main.sum($revenue) / $main.count()
+    format: "$0,0.00"
+
+  - name: unique_customers
+    title: Unique Customers
+    formula: $main.countDistinct($customer_id)
+
+  - name: max_order
+    title: Largest Order
+    formula: $main.max($revenue)
+    format: "$0,0.00"
+```
+
+| Property | Required | Type | Description |
+|----------|----------|------|-------------|
+| `name` | Yes | string | Unique identifier. Changing this breaks bookmarked URLs. |
+| `title` | Yes | string | Display name in the UI. |
+| `formula` | Yes | string | Plywood aggregation expression. See [Formula Reference](#formula-reference). |
+| `description` | No | string (max 100) | Tooltip or help text. |
+| `units` | No | string | Unit label displayed next to the title (e.g., `seconds`, `USD`). |
+| `format` | No | string | Number format string ([numbro](https://numbrojs.com/) syntax). Default: `0,0.0 a`. |
+| `lowerIsBetter` | No | boolean | Set `true` when lower values are preferable (e.g., error rates). |
+| `transformation` | No | string | `none` (default), `percent-of-parent`, or `percent-of-total`. |
+
+### Formula Reference
+
+All measure formulas operate on `$main`, which represents the current data segment. Dimension formulas reference columns directly with `$columnName`.
+
+#### Aggregation Functions
+
+| Formula | Description | Example |
+|---------|-------------|---------|
+| `$main.count()` | Count of rows | Row count |
+| `$main.sum($col)` | Sum of values | `$main.sum($revenue)` |
+| `$main.avg($col)` | Average of values | `$main.avg($price)` |
+| `$main.min($col)` | Minimum value | `$main.min($latency)` |
+| `$main.max($col)` | Maximum value | `$main.max($latency)` |
+| `$main.countDistinct($col)` | Distinct count | `$main.countDistinct($user_id)` |
+| `$main.quantile($col, p)` | Percentile (Druid only) | `$main.quantile($response_time, 0.98)` |
+
+#### Arithmetic and Ratios
+
+Combine aggregations with standard arithmetic:
+
+```yaml
+# Revenue per order
+formula: $main.sum($revenue) / $main.count()
+
+# Conversion rate as percentage
+formula: $main.sum($conversions) / $main.sum($visits) * 100
+
+# Profit margin
+formula: ($main.sum($revenue) - $main.sum($cost)) / $main.sum($revenue)
+```
+
+#### Filtered Aggregations
+
+Apply filters within a measure:
+
+```yaml
+# Revenue from US only
+formula: $main.filter($country == 'United States').sum($revenue)
+
+# High-value orders
+formula: $main.filter($revenue.greaterThan(100)).count()
+```
+
+#### Column References
+
+| Syntax | Meaning |
+|--------|---------|
+| `$columnName` | Reference to a column |
+| `$main` | The current data segment (used in measures) |
+| `$col.lookup('name')` | Named lookup (Druid) |
+| `$col.extract('regex')` | Regex extraction |
+| `$col.customTransform('name')` | Custom transform (Druid) |
+
+### Introspection
+
+Controls how DataReporter discovers schema information from the data source:
+
+| Strategy | Description |
+|----------|-------------|
+| `autofill-all` | Auto-create dimensions and measures from database columns (default) |
+| `autofill-dimensions-only` | Auto-create dimensions only, measures must be manual |
+| `autofill-measures-only` | Auto-create measures only, dimensions must be manual |
+| `no-autofill` | Introspect columns but don't auto-create dimensions/measures |
+| `none` | Skip introspection entirely, use only what's in the config |
+
+### Refresh Rules
+
+Control how DataReporter detects new data:
+
+```yaml
+# Batch sources - queries for max time value every minute
+refreshRule:
+  rule: query
+
+# Real-time sources - assumes current time is latest
+refreshRule:
+  rule: realtime
+
+# Static/historical data - fixed point in time
+refreshRule:
+  rule: fixed
+  time: "2026-01-15T00:00:00.000Z"
+```
 
 ### Validation
 
@@ -123,18 +370,6 @@ DataReporter validates configs in three stages:
 4. **Cross-reference check** -- `timeAttribute`, `defaultSortMeasure`, and `defaultSelectedMeasures` must all exist in `attributes`
 
 If validation fails, the API returns a 400 error with a descriptive message.
-
-### Common Measure Formulas
-
-| Pattern | Formula | Use Case |
-|---------|---------|----------|
-| Count rows | `$main.count()` | Row count |
-| Sum column | `$main.sum($revenue)` | Total revenue |
-| Average | `$main.avg($price)` | Average price |
-| Min/Max | `$main.min($latency)` | Minimum latency |
-| Distinct count | `$main.countDistinct($user_id)` | Unique users |
-| Ratio | `$main.sum($a) / $main.sum($b)` | Conversion rate |
-| Filtered | `$main.filter($country == 'US').sum($revenue)` | US revenue only |
 
 ### Troubleshooting
 
@@ -153,8 +388,99 @@ If validation fails, the API returns a 400 error with a descriptive message.
 **Wrong data types**
 : If numeric columns show as dimensions or string columns appear as measures, update the `attributes` type and move the entry between `dimensions` and `measures` as appropriate.
 
+### Complete Example
+
+A production-ready datacube for an e-commerce orders table:
+
+```yaml
+dataCubes:
+  - name: ecommerce_orders
+    title: E-Commerce Orders
+    description: Customer orders with revenue and product data
+    clusterName: postgres
+    timeAttribute: order_date
+    defaultTimezone: Europe/Riga
+    defaultDuration: P7D
+    defaultSortMeasure: revenue
+    defaultSelectedMeasures:
+      - revenue
+      - order_count
+      - unique_customers
+
+    attributes:
+      - name: order_date
+        type: TIME
+        nativeType: TIMESTAMP WITH TIME ZONE
+      - name: customer_id
+        type: NUMBER
+        nativeType: INTEGER
+      - name: customer_email
+        type: STRING
+        nativeType: CHARACTER VARYING
+      - name: country
+        type: STRING
+        nativeType: CHARACTER VARYING
+      - name: product_category
+        type: STRING
+        nativeType: CHARACTER VARYING
+      - name: revenue
+        type: NUMBER
+        nativeType: NUMERIC
+      - name: quantity
+        type: NUMBER
+        nativeType: INTEGER
+      - name: is_returned
+        type: BOOLEAN
+        nativeType: BOOLEAN
+
+    dimensions:
+      - name: order_date
+        title: Order Date
+        formula: $order_date
+        kind: time
+      - name: customer_email
+        title: Customer
+        formula: $customer_email
+      - name: country
+        title: Country
+        formula: $country
+      - name: product_category
+        title: Product Category
+        formula: $product_category
+      - name: is_returned
+        title: Returned
+        formula: $is_returned
+        kind: boolean
+
+    measures:
+      - name: order_count
+        title: Orders
+        formula: $main.count()
+      - name: revenue
+        title: Revenue
+        formula: $main.sum($revenue)
+        units: EUR
+        format: "0,0.00"
+      - name: avg_order_value
+        title: Avg Order Value
+        formula: $main.sum($revenue) / $main.count()
+        format: "0,0.00"
+      - name: total_quantity
+        title: Items Sold
+        formula: $main.sum($quantity)
+      - name: unique_customers
+        title: Unique Customers
+        formula: $main.countDistinct($customer_id)
+      - name: return_rate
+        title: Return Rate
+        formula: $main.filter($is_returned == true).count() / $main.count()
+        format: "0.0%"
+        lowerIsBetter: true
+        transformation: none
+```
+
 ### Further Reading
 
-- [Datacube Configuration Reference](/docs/user-guide/visualizations/turnilo-datacube-configuration/) -- Full property reference with expression syntax and advanced examples
 - [Turnilo Overview](/docs/user-guide/visualizations/turnilo-overview/) -- Introduction to interactive data exploration
 - [Environment Variables](/docs/open-source/admin-guide/env-vars-settings/) -- Plywood-related env vars (`TURNILO_BACKEND`, `PLYWOOD_SERVER_URL`)
+- [Official Turnilo Datacube Configuration](https://allegro.github.io/turnilo/configuration-datacubes.html) -- Full upstream reference with additional advanced options

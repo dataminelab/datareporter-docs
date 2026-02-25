@@ -12,7 +12,7 @@ toc: true
 You can't upload files to DataReporter directly. Instead, you have to pull them from
 somewhere. This guide shows how to load data from CSV files into DataReporter and
 query it with
-[QRDS](/docs/user-guide/querying/query-results-data-source).
+[QRDS](/docs/user-guide/querying/query-results-data-source/).
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/qL7hZ-SQmRo?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -141,7 +141,7 @@ The CSV data is now available to DataReporter. If everything looks correct click
 2. Set the data source to the Query Results data source from step 1.
 
 There's a complete discussion of QRDS
-[elsewhere](/docs/user-guide/querying/query-results-data-source) in
+[elsewhere](/docs/user-guide/querying/query-results-data-source/) in
 our documentation. A good first query looks like this.
 
 ```

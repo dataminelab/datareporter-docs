@@ -23,7 +23,7 @@ Your query will run automatically once a schedule is set.
 > confirm your math.
 
 > **Warning:** Scheduling queries that use parameters is not currently supported. You can use
-> the [DataReporter API](/docs/user-guide/integrations-and-api/api) and a
+> the [DataReporter API](/docs/user-guide/integrations-and-api/api/) and a
 > scheduling system like CRON instead.
 
 ## Scheduled Query Failure Reports

@@ -1,0 +1,17 @@
+name: Lint Links
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  trailing-slash:
+    name: Enforce trailing slashes
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check trailing slashes on internal links
+        run: bash .github/scripts/check-trailing-slashes.sh

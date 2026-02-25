@@ -5,7 +5,7 @@ category: admin-guide
 order: 2
 ---
 
-> **Important:** This instructions are for those who use our older instace that did not use Docker. If you use our new Docker based instance, check the [updated guide](/docs/open-source/admin-guide/how-to-upgrade).
+> **Important:** This instructions are for those who use our older instace that did not use Docker. If you use our new Docker based instance, check the [updated guide](/docs/open-source/admin-guide/how-to-upgrade/).
 
 > **Important:** **Starting from the Redash V8 release we're no longer building the tarball version of a release – only Docker images.** This of course doesn’t prevent you from deploying DataReporter anyway you want, but the `bin/upgrade` script won't work with the new releases.
 

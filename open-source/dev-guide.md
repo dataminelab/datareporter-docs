@@ -18,14 +18,14 @@ the frontend we use ES6, React and Webpack for bundling.
 ## Setup
 
 - [Developer Installation Guide](https://github.com/getredash/redash/wiki/Local-development-setup)
-- [Debugging a DataReporter Server on Docker Using Visual Studio Code](/docs/open-source/dev-guide/debugging)
-- [Using a remote server and installing locally only the frontend dependencies](/docs/open-source/dev-guide/remote-server)
+- [Debugging a DataReporter Server on Docker Using Visual Studio Code](/docs/open-source/dev-guide/debugging/)
+- [Using a remote server and installing locally only the frontend dependencies](/docs/open-source/dev-guide/remote-server/)
 - [Frontend End-to-End Tests](https://github.com/getredash/redash/wiki/Testing-your-changes#comprehensive-e2e-testing-cypress)
 
 ## Additional Resources
 
 - [How to create a new visualization](https://discuss.redash.io/t/how-to-create-new-visualization-types-in-redash/86)
-- [How to create a new query runner](/docs/open-source/dev-guide/write-a-query-runner)
+- [How to create a new query runner](/docs/open-source/dev-guide/write-a-query-runner/)
 
 ## Getting Help
 

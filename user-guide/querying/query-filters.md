@@ -32,7 +32,7 @@ GROUP BY action
 
 ![](/docs/images/gitbook/multifilter_example.png)
 
-You can use Query Filters on dashboards too. By default, the filter widget will appear beside each visualization where the filter has been added to the query. If you'd like to link together the filter widgets into a dashboard-level Query Filter see [these instructions](/docs/user-guide/dashboards/dashboard-editing).
+You can use Query Filters on dashboards too. By default, the filter widget will appear beside each visualization where the filter has been added to the query. If you'd like to link together the filter widgets into a dashboard-level Query Filter see [these instructions](/docs/user-guide/dashboards/dashboard-editing/).
 
 ## Limitations
 

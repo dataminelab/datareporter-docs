@@ -18,4 +18,4 @@ url: "https://www.example.com/path/to/file.xlsx"
 user-agent: "Google Chrome";v="95", "Chromium";v="95", ";Not A Brand";v="99"
 ```
 
-To query Excel or CSV files with SQL, you can use the [QRDS](/docs/user-guide/querying/query-results-data-source) in a separate query.
+To query Excel or CSV files with SQL, you can use the [QRDS](/docs/user-guide/querying/query-results-data-source/) in a separate query.

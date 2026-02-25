@@ -4,7 +4,7 @@ section: user-guide
 category: users
 ---
 
-Users of DataReporter can be members of one or more groups. Each new user is added to the `Default` group automatically. Members of `Admin` can create new groups, add and remove members from groups, and disable users from accessing DataReporter entirely. Each group can be connected to specific data sources. Read more about group permissions [here](/docs/user-guide/users/permissions-groups).
+Users of DataReporter can be members of one or more groups. Each new user is added to the `Default` group automatically. Members of `Admin` can create new groups, add and remove members from groups, and disable users from accessing DataReporter entirely. Each group can be connected to specific data sources. Read more about group permissions [here](/docs/user-guide/users/permissions-groups/).
 
 ## Creating & Editing Groups
 

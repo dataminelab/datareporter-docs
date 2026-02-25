@@ -52,7 +52,7 @@ to load the second. That's the whole query. Leave out any SQL at this point.
 
 When you connect a Google Sheet with DataReporter, we load it in full. You can generate visualizations from the data and add it to your dashboards. If you want to filter some data or aggregate it beyond what a pivot table can accomplish, you can use one of the following methods:
 
-- Use the [Query Results Data Source](/docs/user-guide/querying/query-results-data-source) which allows you to query results from other queries.
+- Use the [Query Results Data Source](/docs/user-guide/querying/query-results-data-source/) which allows you to query results from other queries.
 - Use [Google BigQuery's integration with Google Drive](https://cloud.google.com/blog/big-data/2016/05/bigquery-integrates-with-google-drive) to create a Google BigQuery external table based on the Google Spreadsheet.
 
 ## A Note About Dates
