@@ -11,7 +11,7 @@ jobs:
     name: Enforce trailing slashes
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Check trailing slashes on internal links
         run: bash .github/scripts/check-trailing-slashes.sh
