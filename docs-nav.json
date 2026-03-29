@@ -65,6 +65,12 @@
           ]
         },
         {
+          "title": "AI Queries",
+          "items": [
+            { "title": "Using AI Queries", "link": "/docs/user-guide/ai/ai-queries/" }
+          ]
+        },
+        {
           "title": "Integrations & API",
           "items": [
             { "title": "API", "link": "/docs/user-guide/integrations-and-api/api/" },
@@ -114,6 +120,7 @@
             { "title": "LDAP Authentication", "link": "/docs/open-source/admin-guide/ldap-authentication/" },
             { "title": "Maintenance", "link": "/docs/open-source/admin-guide/maintenance/" },
             { "title": "Secrets", "link": "/docs/open-source/admin-guide/secrets/" },
+            { "title": "AI Configuration", "link": "/docs/open-source/admin-guide/ai-configuration/" },
             { "title": "Datacube Configuration", "link": "/docs/open-source/admin-guide/datacube-configuration/" },
             { "title": "Google Dev Account", "link": "/docs/open-source/admin-guide/google-developer-account-setup/" },
             { "title": "Usage Data", "link": "/docs/open-source/admin-guide/usage-data/" }

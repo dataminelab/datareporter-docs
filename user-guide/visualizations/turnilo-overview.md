@@ -28,7 +28,7 @@ DataReporter embeds Turnilo to provide interactive exploration directly within y
 - **Real-time filtering** — Click to filter, split, and drill down into data
 - **Dashboard embedding** — Turnilo widgets integrate natively into DataReporter dashboards
 - **Multi-backend support** — Works with PostgreSQL, MySQL, BigQuery, Athena, Druid, and JSON data sources
-- **Hash-based state** — Every exploration state is encoded in a URL hash for easy sharing and bookmarking
+- **Ephemeral reports** — Every exploration state is compressed into the URL — share a link, not a saved object
 - **Parameter mapping** — Dashboard-level filters (e.g., date ranges) pass through to Turnilo widgets automatically
 
 ### Visualization Types
@@ -69,6 +69,19 @@ Turnilo in DataReporter connects through the Plywood backend and supports:
 2. **Configuration Endpoint** — `/config-turnilo` provides data cube definitions, dimensions, and measures to the frontend
 3. **Dashboard Widgets** — Turnilo visualizations embed in DataReporter dashboards as widgets with the `[turnilo-widget]` marker
 4. **State Management** — Each widget's state (filters, splits, measures) is encoded as a hash in the widget configuration
+
+### Ephemeral Reports
+
+Every Turnilo view is an ephemeral report. The full exploration state — visualization type, filters, splits, measures, time ranges, and sort order — is JSON-serialized, compressed, and encoded directly into the URL hash. The URL _is_ the report.
+
+This means:
+
+- **Share via link** — Paste a Turnilo URL in Slack or email and your teammate opens the exact same view. No need to save a report first.
+- **Bookmark complex analyses** — The browser bookmark preserves every detail of your exploration. Come back to it weeks later and it loads exactly as you left it.
+- **No report clutter** — There are no saved report objects to name, organize, or clean up. Every view is self-contained in its URL.
+- **Programmatic generation** — AI assistants and scripts can build report URLs without needing write access to the database. The MCP server's `dr_build_turnilo_url` tool does exactly this.
+
+Traditional BI tools require you to save, name, and file every view before you can share it. With ephemeral reports, exploration and sharing are the same action — just copy the URL.
 
 ### Getting Started
 
